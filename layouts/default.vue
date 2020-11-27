@@ -57,8 +57,8 @@ export default {
         },
         {
           icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire',
+          title: 'Piano',
+          to: '/piano',
         },
       ],
       miniVariant: false,
