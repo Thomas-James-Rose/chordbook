@@ -56,7 +56,7 @@ export default {
           to: '/',
         },
         {
-          icon: 'mdi-chart-bubble',
+          icon: 'mdi-piano',
           title: 'Piano',
           to: '/piano',
         },
