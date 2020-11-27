@@ -1,21 +1,33 @@
 <template>
-  <div>
-    <select id="piano-chord-selector" v-model="selectedChord" name="chord">
-      <option v-for="chord in chords" :key="chord.name">
-        {{ chord.name }}
-      </option>
-    </select>
-    <piano-chord
-      :chord-name="getChordDataByName(chords, selectedChord).name"
-      :notes="getChordDataByName(chords, selectedChord).notes"
-    />
+  <div class="chord-page-wrapper">
+    <div class="select-wrapper">
+      <v-select
+        v-model="selectedChord"
+        :items="chords"
+        item-text="name"
+        item-value="name"
+        label="Select Chord..."
+      ></v-select>
+    </div>
+    <piano-chord :notes="getChordDataByName(chords, selectedChord).notes" />
   </div>
 </template>
 
 <style>
+.chord-page-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.select-wrapper {
+  text-align: center;
+}
+
 #piano-chord-selector {
   background: #fff;
   padding: 0.2em;
+  width: 3em;
+  appearance: initial;
 }
 </style>
 
@@ -30,7 +42,6 @@ export default {
     return {
       chords: [
         // TODO: Finish populating this
-        { name: 'None', notes: [] },
         { name: 'A', notes: ['a', 'cs2', 'e2'] },
         // { name: 'Am', notes: [] },
         { name: 'Bb', notes: ['as', 'd2', 'f2'] },
@@ -55,7 +66,7 @@ export default {
   },
   methods: {
     getChordDataByName(chords, name) {
-      return chords.find((chord) => chord.name === name)
+      return chords.find((chord) => chord.name === name) || { notes: [] }
     },
   },
 }

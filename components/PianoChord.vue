@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h2 class="chord-name">Chord {{ chordName }}</h2>
     <ul class="keys">
       <div>
         <li class="white c" :class="highlightKey('c')"></li>
@@ -99,10 +98,6 @@
 export default {
   name: 'PianoChord',
   props: {
-    chordName: {
-      type: String,
-      required: true,
-    },
     notes: {
       type: Array,
       required: true,
