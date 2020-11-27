@@ -1,13 +1,23 @@
 <template>
   <div>
+    <select id="piano-chord-selector" v-model="selectedChord" name="chord">
+      <option v-for="chord in chords" :key="chord.name">
+        {{ chord.name }}
+      </option>
+    </select>
     <piano-chord
-      v-for="chord in chords"
-      :key="chord.name"
-      :chord-name="chord.name"
-      :notes="chord.notes"
+      :chord-name="getChordDataByName(chords, selectedChord).name"
+      :notes="getChordDataByName(chords, selectedChord).notes"
     />
   </div>
 </template>
+
+<style>
+#piano-chord-selector {
+  background: #fff;
+  padding: 0.2em;
+}
+</style>
 
 <script>
 import PianoChord from '~/components/PianoChord.vue'
@@ -20,6 +30,7 @@ export default {
     return {
       chords: [
         // TODO: Finish populating this
+        { name: 'None', notes: [] },
         { name: 'A', notes: ['a', 'cs2', 'e2'] },
         // { name: 'Am', notes: [] },
         { name: 'Bb', notes: ['as', 'd2', 'f2'] },
@@ -39,7 +50,13 @@ export default {
         { name: 'G', notes: ['g', 'b', 'd2'] },
         // { name: 'Gm', notes: [] },
       ],
+      selectedChord: 'None',
     }
+  },
+  methods: {
+    getChordDataByName(chords, name) {
+      return chords.find((chord) => chord.name === name)
+    },
   },
 }
 </script>
