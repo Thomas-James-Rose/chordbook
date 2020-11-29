@@ -7,15 +7,7 @@
       <v-card>
         <v-card-title class="headline"> Welcome to Chordbook </v-card-title>
         <v-card-text>
-          <p>
-            Powered by Vue and Vuetify.js
-            <img
-              width="10px"
-              class="VuetifyLogo"
-              alt="Vuetify Logo"
-              src="./vuetify-logo.svg"
-            />
-          </p>
+          <p>Created with Nuxt, Vue and Vuetify.js</p>
         </v-card-text>
       </v-card>
     </v-col>
