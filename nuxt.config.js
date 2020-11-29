@@ -4,6 +4,11 @@ export default {
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
 
+  // GitHub Pages (https://nuxtjs.org/faq/github-pages)
+  router: {
+    base: '/chordbook/',
+  },
+
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
     titleTemplate: '%s - chordbook',
