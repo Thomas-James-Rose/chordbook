@@ -13,7 +13,7 @@
               width="10px"
               class="VuetifyLogo"
               alt="Vuetify Logo"
-              src="/vuetify-logo.svg"
+              src="./vuetify-logo.svg"
             />
           </p>
         </v-card-text>
